@@ -12,7 +12,7 @@ class Patient(models.Model):
     age = models.CharField(max_length=100)
     gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default="MALE")
     phone = models.CharField(max_length=100)
-    address = models.CharField()
+    address = models.CharField(max_length=500)
     doctor = models.ForeignKey(Doctor, on_delete=models.DO_NOTHING)
     symtoms = models.TextField()
     presciption = models.TextField()
@@ -61,7 +61,7 @@ class Companion(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
-    address = models.CharField()
+    address = models.CharField(max_length=500)
 
     def __str__(self):
         return self.patient.name + " - " + self.name
