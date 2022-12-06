@@ -13,7 +13,7 @@ class Doctor(models.Model):
     gender = models.CharField(max_length=6, choices=GENDER_CHOICES, default="MALE")
     phone = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
-    address = models.CharField()
+    address = models.CharField(max_length=500)
     qualification = models.CharField(max_length=100)
     specialization = models.CharField(max_length=100)
     experience = models.CharField(max_length=100)
